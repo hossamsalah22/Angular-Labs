@@ -7,6 +7,8 @@ import { StudentListComponent } from './student/student-list/student-list.compon
 import { StudentAddComponent } from './student/student-add/student-add.component';
 import { StudentUpdateComponent } from './student/student-update/student-update.component';
 import { StudentDetailsComponent } from './student/student-details/student-details.component';
+import { AddDepartmentComponent } from './department/add-department/add-department.component';
+import { ListDepartmentComponent } from './department/list-department/list-department.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { StudentDetailsComponent } from './student/student-details/student-detai
     StudentListComponent,
     StudentAddComponent,
     StudentUpdateComponent,
-    StudentDetailsComponent
+    StudentDetailsComponent,
+    AddDepartmentComponent,
+    ListDepartmentComponent
   ],
   imports: [
     BrowserModule, FormsModule
