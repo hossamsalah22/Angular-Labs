@@ -1,0 +1,12 @@
+<div class="gap-2 mb-4">
+  <input class="form-control" [(ngModel)]="addNewStudent.id" />
+  <input class="form-control" [(ngModel)]="addNewStudent.name" />
+  <input class="form-control" [(ngModel)]="addNewStudent.age" />
+  <button
+    type="button"
+    class="form-control btn btn-success"
+    (click)="addStudent()"
+  >
+    Add Student
+  </button>
+</div>

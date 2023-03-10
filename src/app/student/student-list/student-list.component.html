@@ -1,0 +1,51 @@
+<!-- <p>student-list works!</p> -->
+<app-student-add (addClick)="addStudent($event)"></app-student-add>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover table-primary align-middle">
+    <thead class="table-light">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Operations</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr class="table-primary" *ngFor="let student of students">
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.age }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="showDetails(student.id)">
+            Details
+          </button>
+          <button class="btn btn-danger" (click)="deleteStudent(student.id)">
+            Delete
+          </button>
+          <button
+            class="btn btn-warning"
+            (click)="updateStudentData(student.id)"
+          >
+            Update
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot></tfoot>
+  </table>
+</div>
+
+<div *ngIf="detailsFlag">
+  <app-student-details
+    [studentDetails]="outputStudentDetails"
+    (hideClick)="toggleHide()"
+  ></app-student-details>
+</div>
+
+<div *ngIf="updateFlag">
+  <app-student-update
+    [updateStudentData]="studentUpdate"
+    (updateClick)="updateStudent($event)"
+  ></app-student-update>
+</div>
